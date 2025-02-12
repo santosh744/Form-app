@@ -1,8 +1,9 @@
 // import { useFormik } from 'formik';
-import { Button, Grid, Typography } from '@mui/material';
+import {  Grid, Typography } from '@mui/material';
 import TextField from '../FormFields/TextField';
 import { signInSchema } from '../../utils/validationSchemas';
 import { Formik } from 'formik'
+import CustomButton from '../FormFields/CustomButton';
 
 const SignInForm = ({ onSubmit }: { onSubmit: () => void }) => {
     return (
@@ -32,15 +33,9 @@ const SignInForm = ({ onSubmit }: { onSubmit: () => void }) => {
           <TextField name="password" label="Password" type="password" required />
         </Grid>
         <Grid item xs={12}>
-          <Button
-            type="submit"
-            variant="contained"
-            color="primary"
-            fullWidth
-            disabled={formik.isSubmitting}
-          >
+          <CustomButton disabled={formik.isSubmitting}>
             Sign In
-          </Button>
+          </CustomButton>
             </Grid>
             </Grid>
           </form>

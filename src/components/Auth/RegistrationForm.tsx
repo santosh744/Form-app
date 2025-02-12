@@ -1,8 +1,8 @@
-// import { useFormik } from 'formik';
-import { Button, Grid, Typography } from '@mui/material';
+import {  Grid, Typography } from '@mui/material';
 import TextField from '../FormFields/TextField';
 import { registrationSchema } from '../../utils/validationSchemas';
 import { Formik } from 'formik'; 
+import CustomButton from '../FormFields/CustomButton';
 
 const RegistrationForm = ({ onSubmit }: { onSubmit: () => void }) => {
     return (
@@ -13,6 +13,7 @@ const RegistrationForm = ({ onSubmit }: { onSubmit: () => void }) => {
           email: '',
           phoneNumber: '',
           password: '',
+          confirmPassword: '',
         }}
         validationSchema={registrationSchema}
         onSubmit={(values) => {
@@ -44,7 +45,10 @@ const RegistrationForm = ({ onSubmit }: { onSubmit: () => void }) => {
           <TextField name="password" label="Password" type="password" required />
         </Grid>
         <Grid item xs={12}>
-          <Button
+          <TextField name="confirmPassword" label="ConfirmPassword" type="password" required />
+        </Grid>
+        <Grid item xs={12}>
+          {/* <Button
             type="submit"
             variant="contained"
             color="primary"
@@ -52,7 +56,10 @@ const RegistrationForm = ({ onSubmit }: { onSubmit: () => void }) => {
             disabled={formik.isSubmitting}
           >
             Register
-          </Button>
+          </Button> */}
+          <CustomButton disabled={formik.isSubmitting}>
+            Register
+          </CustomButton>
             </Grid>
             </Grid>
           </form>
