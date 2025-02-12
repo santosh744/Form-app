@@ -6,7 +6,6 @@ import SignInForm from './components/Auth/SignInForm';
 import { Navigate } from 'react-router-dom';
 const App = () => {
   const handleSubmit = () => {
-    // Handle successful submission (e.g., redirect, show message)
     console.log('Form submitted successfully');
   };
 
