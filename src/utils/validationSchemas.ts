@@ -6,7 +6,8 @@ export const registrationSchema = yup.object({
   email: yup.string().email('Invalid email').required('Email is required'),
   phoneNumber: yup.string().matches(/^[0-9]{10}$/, 'Invalid phone number').required('Phone number is required'),
   password: yup.string().min(6, 'Password must be at least 6 characters').required('Password is required'),
-  confirmPassword:yup.string().oneOf([yup.ref('password')],'Passwords must match').required('Confirm password is required')
+  confirmPassword:yup.string().oneOf([yup.ref('password')],'Passwords must match').required('Confirm password is required'),
+  gender: yup.string().required('Gender is required'),
 });
 
 export const signInSchema = yup.object({
